@@ -7,7 +7,7 @@ gameScene.init = function () {
   this.playerSpeed = 3;
 
   // enemy speed
-  this.enemyMinSpeed = 1;
+  this.enemyMinSpeed = 2;
   this.enemyMaxSpeed = 4.5;
 
   // boundaries
@@ -69,7 +69,7 @@ gameScene.create = function () {
     this.enemies.getChildren(),
     function (enemy) {
       //flip enemy
-      enemy.flipX = true;
+      enemy.flipX = false;
 
       //set speed
       let dir = Math.random() < 0.5 ? 1 : -1;
