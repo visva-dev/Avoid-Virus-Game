@@ -11,8 +11,8 @@ gameScene.init = function () {
   this.enemyMaxSpeed = 4.5;
 
   // boundaries
-  this.enemyMinY = 80;
-  this.enemyMaxY = 280;
+  this.enemyMinY = 30;
+  this.enemyMaxY = 300;
 
   // we are not terminating
   this.isTerminating = false;
@@ -36,15 +36,15 @@ gameScene.create = function () {
   bg.setOrigin(0, 0);
 
   // create the player
-  this.player = this.add.sprite(40, this.sys.game.config.height / 2, 'player');
+  this.player = this.add.sprite(20, this.sys.game.config.height / 1.3, 'player');
 
   // we are reducing the width by 50%, and we are doubling the height
   this.player.setScale(0.5);
 
   // goal
   this.goal = this.add.sprite(
-    this.sys.game.config.width - 80,
-    this.sys.game.config.height / 2,
+    this.sys.game.config.width - 30,
+    this.sys.game.config.height / 1.3,
     'goal'
   );
   this.goal.setScale(0.6);
@@ -52,11 +52,11 @@ gameScene.create = function () {
   // enemy group
   this.enemies = this.add.group({
     key: 'enemy',
-    repeat: 5,
+    repeat: 4,
     setXY: {
-      x: 90,
-      y: 100,
-      stepX: 80,
+      x: 60,
+      y: 250,
+      stepX: 120,
       stepY: 20,
     },
   });
